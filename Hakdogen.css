@@ -1,0 +1,117 @@
+body {
+    background-color: rgba(0, 0, 0, 0.42);
+    margin-top: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Required for absolute positioning of the ripple */
+    height: 100vh; /* Make sure the body takes the full height */
+    overflow: hidden;
+}
+
+.imgC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 20px auto;
+}
+
+#image2 {
+    display: none;
+    width: 100%;
+}
+
+#image1 {
+    width: 100%;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 10px 0;
+}
+
+.con {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dos {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.534);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#followMe {
+    position: absolute;
+    width: 100px; 
+    pointer-events: none; 
+    z-index: 1000; 
+}
+
+/*hakdogen2*/
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.una {
+    background-color: black;
+}
+
+.butC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+.dariri {
+    height: 50px;
+    width: auto;
+}
+
+.ripple-container {
+    position: absolute; /* Cover the entire body */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent the container from interfering with clicks */
+}
+
+.ripple {
+    position: absolute;
+    width: 20px; /* Starting size of the ripple */
+    height: 20px; /* Starting size of the ripple */
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out forwards; /* Animation for the ripple */
+    pointer-events: none; /* Prevent pointer events */
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(5); /* Scale the ripple */
+        opacity: 0; /* Fade out the ripple */
+    }
+}
+
+#sunodKa {
+    position: absolute;
+    width: 100px; 
+    pointer-events: none; 
+    z-index: 1000; 
+}

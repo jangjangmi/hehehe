@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakdogen</title>
+    <link rel="stylesheet" href="Hakdogen.css">
+</head>
+<body>
+
+    <img src="awooo.png" alt="sunod" id="sunodKa">
+    <h1>Ikaw ba ay isang Abnormal?</h1>
+    <p>Kung hindi ka Abnormal, pindotin mo nga yung button sa baba</p>
+
+    <form action="Hakdogen2.html">
+        <div class="butC">
+            <button class="una">
+                <img src="dariri.png" alt="pointf" class="dariri">
+            </button>
+        </div>
+    </form>
+
+<script>
+    document.addEventListener('mousemove', function(e) {
+            var image = document.getElementById('sunodKa');
+            var mouseX = e.pageX;
+            var mouseY = e.pageY;
+
+            var imageWidth = image.offsetWidth / 2;
+            var imageHeight = image.offsetHeight / 2;
+            
+            image.style.left = (mouseX - imageWidth) + 'px';
+            image.style.top = (mouseY - imageHeight) + 'px';
+        });
+
+        document.body.addEventListener('click', function(e) {
+            // Create a span element for the ripple
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+
+            // Set the ripple's size based on the click event
+            const size = 150; // Set a fixed size for the ripple
+            ripple.style.width = ripple.style.height = `${size}px`;
+
+            // Set the ripple's position based on where the click happened
+            const x = e.clientX - size / 2; // Center the ripple
+            const y = e.clientY - size / 2; // Center the ripple
+
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            // Append the ripple to the body
+            document.body.appendChild(ripple);
+
+            // Remove the ripple after the animation ends
+            setTimeout(() => {
+                ripple.remove();
+            }, 600); // Adjust time to match animation duration
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakdogen2</title>
+    <link rel="stylesheet" href="Hakdogen.css">
+</head>
+<body>
+
+    <img src="shesh.png" alt="follow" id="followMe">
+
+    <div class="con">
+    <form action="index.html">
+    <button class="dos">Back</button>
+</form>
+</div>
+
+    <h1>Oh kung hindi ka Abnormal... pindotin mo yung nasa gitna.</h1>
+
+    <div class="imgC">
+        <img src="sussyBaka.png" alt="First Image" id="image1" onclick="toggleImage()">
+        <img src="UTOUTO.png" alt="Second Image" id="image2" onclick="toggleImage()">
+    </div> 
+
+    <script>
+          function toggleImage() {
+            var image1 = document.getElementById('image1');
+            var image2 = document.getElementById('image2');
+            if (image1.style.display === 'none') {
+                image1.style.display = 'block';
+                image2.style.display = 'none';
+            } else {
+                image1.style.display = 'none';
+                image2.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('mousemove', function(e) {
+            var image = document.getElementById('followMe');
+            var mouseX = e.pageX;
+            var mouseY = e.pageY;
+            
+            // Offset the image so it's centered on the cursor
+            var imageWidth = image.offsetWidth / 2;
+            var imageHeight = image.offsetHeight / 2;
+            
+            image.style.left = (mouseX - imageWidth) + 'px';
+            image.style.top = (mouseY - imageHeight) + 'px';
+        });
+    </script>
+</body>
+</html>
